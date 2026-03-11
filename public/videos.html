@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Videos • BrightPath Academy</title>
+    <meta
+      name="description"
+      content="Browse learning videos by grade: Grade 1, Grade 2, Grade 3."
+    />
+    <link rel="stylesheet" href="./assets/styles.css" />
+    <script defer src="./assets/app.js"></script>
+    <script defer src="./assets/auth.js"></script>
+    <script defer src="./assets/manifests.js"></script>
+    <script defer src="./assets/videos.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="./index.html" aria-label="BrightPath Academy home">
+          <span class="brand-mark" aria-hidden="true">B</span>
+          <span class="brand-text">
+            <span class="brand-name">BrightPath</span>
+            <span class="brand-sub">Academy</span>
+          </span>
+        </a>
+
+        <nav class="nav" aria-label="Primary">
+          <a class="nav-link" href="./index.html">Home</a>
+          <a class="nav-link is-active" href="./videos.html">Videos</a>
+          <a class="nav-link" href="./login.html">Login</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main" class="page">
+      <section class="page-head">
+        <div class="container">
+          <div class="page-head-row">
+            <div>
+              <h1 class="page-title">English video lessons</h1>
+              <p class="page-lead">
+                Pick a grade to see lessons. Drop videos into the grade folders and run
+                <code class="code">tools/generate-manifests.ps1</code>, then refresh.
+              </p>
+            </div>
+            <div class="page-actions">
+              <button class="icon-btn" type="button" data-theme-toggle aria-label="Toggle theme">
+                <span class="icon" aria-hidden="true">◐</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="toolbar" role="region" aria-label="Grade filter">
+            <div class="segmented" role="tablist" aria-label="Choose grade">
+              <button class="seg-btn" type="button" role="tab" data-grade="all" aria-selected="true">
+                All
+              </button>
+              <button class="seg-btn" type="button" role="tab" data-grade="1" aria-selected="false">
+                Grade 1
+              </button>
+              <button class="seg-btn" type="button" role="tab" data-grade="2" aria-selected="false">
+                Grade 2
+              </button>
+              <button class="seg-btn" type="button" role="tab" data-grade="3" aria-selected="false">
+                Grade 3
+              </button>
+            </div>
+
+            <label class="search" aria-label="Search videos">
+              <span class="search-icon" aria-hidden="true">⌕</span>
+              <input id="searchInput" type="search" placeholder="Search title or topic..." autocomplete="off" />
+            </label>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div id="lockedGate" class="card locked-card" hidden>
+            <h2 class="locked-title">Videos are locked</h2>
+            <p class="locked-text">
+              Please enter your printed access code to unlock your grade videos.
+            </p>
+            <a class="btn btn-primary" href="./login.html">Go to Login</a>
+          </div>
+
+          <div id="resultsMeta" class="results-meta muted" aria-live="polite"></div>
+          <div id="videosGrid" class="grid-cards" aria-label="Video results"></div>
+
+          <div id="emptyState" class="empty card" hidden>
+            <h2 class="empty-title">No matches</h2>
+            <p class="empty-text">
+              Try a different grade or search term.
+            </p>
+            <button class="btn btn-ghost" type="button" id="clearFiltersBtn">Clear filters</button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <div class="footer-left">
+          <div class="brand brand-small" aria-label="BrightPath Academy">
+            <span class="brand-mark" aria-hidden="true">B</span>
+            <span class="brand-text">
+              <span class="brand-name">BrightPath</span>
+              <span class="brand-sub">Academy</span>
+            </span>
+          </div>
+          <p class="muted">Tip: replace sample links with your real lessons.</p>
+        </div>
+
+        <div class="footer-right">
+          <a class="footer-link" href="./index.html">Home</a>
+          <a class="footer-link" href="#main">Back to top</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
